@@ -81,7 +81,8 @@ module.exports = {
             data
         }) {
         let {title, href} = data;
-        let content = title + '; ' + href;
+        let content = '; ' + href;
+        // let content = title + '; ' + href;
         // 第一次不通知
         if (this.counts[name] > 1) {
             // 最高优先级
