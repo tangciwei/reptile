@@ -53,7 +53,7 @@ module.exports = {
         else {
             global.webData[name] = data;
         }
-        console.log(data);
+        console.log(name + ': ', data);
     },
     // 数据分析
     analyse(data) {

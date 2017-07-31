@@ -29,7 +29,7 @@ module.exports = {
                 let style = $(a).attr('style');
                 // 取第一个
                 if (!style && !lock) {
-                    href = $(a).attr('href');
+                    href = baseUrl + $(a).attr('href');
                     time = $(a).find('span').text().trim();
                     title = S($(a).text()).collapseWhitespace().s;
                     title = S(title).replaceAll(time, '').s;
