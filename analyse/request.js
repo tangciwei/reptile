@@ -62,7 +62,9 @@ module.exports = {
         // 0为最高优先级
         let level = 10;
         if (title) {
-            if (title.indexOf('上线') !== -1 || title.indexOf('开放') !== -1) {
+            if (title.indexOf('上线') !== -1
+                || title.indexOf('开放') !== -1
+                || title.indexOf('上币') !== -1) {
                 level = 0;
             }
         }
