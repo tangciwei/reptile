@@ -43,6 +43,6 @@ module.exports = {
         console.log('第一次成功');
         setInterval(() => {
             this.oneTime();
-        }, 31 * 1000);
+        }, 61 * 1000);
     }
 };
