@@ -11,14 +11,20 @@ var ignoreList = [
     'package-lock.json',
     '.git/**'
 ].join(',');
-
+var es6List = [
+    '**.js',
+    ''
+];
 fis.match('{' + ignoreList + '}', {
         release: false
     })
-    .match('**.js', {
+    .match('{' + es6List + '}', {
         parser: [
-            fis.plugin('babel-5.x', {
-                optional: ['es7.decorators', 'es7.classProperties']
+            fis.plugin('babel-6.x', {
+                plugins: [
+                    'async-to-promises',
+                    'array-includes'
+                ]
             })
         ]
-    });
+    })
