@@ -104,11 +104,14 @@ module.exports = {
             }
             // 普通通知
             else {
-                yunpian.post({
+                let t1 = new Date();
+                console.log(name, '开始发短信...');
+                await yunpian.post({
                     mobile: '18500909025',
                     name,
                     content
                 });
+                console.log(name, '短信耗时', new Date() - t1);
             }
         }
 
