@@ -1,7 +1,7 @@
 const https = require('https');
 let u = require('underscore');
 let qs = require('querystring');
-const {URL} = require('url');
+const URL = require('url');
 
 module.exports = {
     // 针对回调函数封装成promise
@@ -53,7 +53,7 @@ module.exports = {
     },
     rawGet(option, callback) {
         let {url, headers={}} = option;
-        const myURL = new URL(url);
+        const myURL = URL.parse(url);
         let {hostname, pathname} = myURL;
 
         let options = {
