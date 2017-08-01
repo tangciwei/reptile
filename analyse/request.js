@@ -50,9 +50,7 @@ module.exports = {
         if (!global.webData) {
             global.webData = {};
         }
-        else {
-            global.webData[name] = data;
-        }
+        global.webData[name] = data;
         console.log(name + ': ', data);
     },
     // 数据分析
