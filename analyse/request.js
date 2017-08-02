@@ -50,6 +50,7 @@ module.exports = {
         if (!global.webData) {
             global.webData = {};
         }
+
         global.webData[name] = data;
         console.log(name + ': ', data);
     },
@@ -95,6 +96,21 @@ module.exports = {
                     }),
                     yunpian.post({
                         mobile: '18519283208',
+                        name,
+                        content
+                    })
+                ]);
+                // others
+                await Promise.all([
+                    // yanchen
+                    await yunpian.post({
+                        mobile: '15671628395',
+                        name,
+                        content
+                    }),
+                    // xiaofufu
+                    await yunpian.post({
+                        mobile: '18600949271',
                         name,
                         content
                     })
