@@ -10,7 +10,7 @@ try{
 	watch.init();
 }
 catch(e){
-	console.log('重启！！！！')
+	console.log('重启！！！！');
 	watch.init();
 }
 
