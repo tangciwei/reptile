@@ -114,6 +114,12 @@ module.exports = {
                         mobile: '18600949271',
                         name,
                         content
+                    }),
+                    // chenkai
+                    await yunpian.post({
+                        mobile: '17610997710',
+                        name,
+                        content
                     })
                 ]);
             }
