@@ -12,7 +12,7 @@ let request = require('./request');
 let yunpian = require('./yunpian-sms');
 
 let log = require('../log');
-
+let config = require('../config');
 module.exports = {
     async oneTime() {
         async function requestOnce({name, web}) {
@@ -42,9 +42,10 @@ module.exports = {
     },
     async init() {
         await this.oneTime();
+        let time = config.loopTime;
         log.trace('第一次成功');
         setInterval(() => {
             this.oneTime();
-        }, 49 * 1000);
+        }, time);
     }
 };
