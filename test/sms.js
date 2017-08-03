@@ -1,5 +1,5 @@
-require('dotenv').load();
-let yunpian = require('./analyse/yunpian-sms');
+require('dotenv').load('../.env');
+let yunpian = require('../analyse/yunpian-sms');
 let t1 = new Date();
 
 async function test() {
