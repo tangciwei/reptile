@@ -1,5 +1,6 @@
 let u = require('underscore');
 let yunpian = require('./yunpian-sms');
+let log = require('../log');
 
 module.exports = {
     // 数据
@@ -14,7 +15,7 @@ module.exports = {
         let href = data.href;
         // 无效请求
         if (!href || href.indexOf('undefined') !== -1) {
-            console.log(`${name}: 无效请求`);
+            log.trace(`${name}: 无效请求`);
             return false;
         }
         // 有效的请求
@@ -27,7 +28,7 @@ module.exports = {
 
             // 数据对比
             if (this.diff({name, data})) {
-                console.log(this.counts[name], name, '数据一样。。。');
+                log.trace(this.counts[name], name, '数据一样。。。');
             }
             else {
                 // 存储数据
@@ -52,7 +53,7 @@ module.exports = {
         }
 
         global.webData[name] = data;
-        console.log(name + ': ', data);
+        log.trace(name + ': ', JSON.stringify(data));
     },
     // 数据分析
     analyse(data) {
@@ -119,13 +120,13 @@ module.exports = {
             // 普通通知
             else {
                 let t1 = new Date();
-                console.log(name, '开始发短信...');
+                log.trace(name, '开始发短信...');
                 await yunpian.post({
                     mobile: '18500909025',
                     name,
                     content
                 });
-                console.log(name, '短信耗时', new Date() - t1);
+                log.trace(name, '短信耗时', new Date() - t1);
             }
         }
 

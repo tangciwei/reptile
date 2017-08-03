@@ -11,6 +11,8 @@ let btc9 = require('../websites/btc9');
 let request = require('./request');
 let yunpian = require('./yunpian-sms');
 
+let log = require('../log');
+
 module.exports = {
     async oneTime() {
         async function requestOnce({name, web}) {
@@ -18,7 +20,7 @@ module.exports = {
                 await request.common({name, web});
             }
             catch (e) {
-                console.log(name, '接口挂掉了');
+                log.trace(name, '接口挂掉了');
                 // await yunpian.post({
                 //     mobile: '18500909025',
                 //     name,
@@ -40,9 +42,9 @@ module.exports = {
     },
     async init() {
         await this.oneTime();
-        console.log('第一次成功');
+        log.trace('第一次成功');
         setInterval(() => {
             this.oneTime();
-        }, 61 * 1000);
+        }, 81 * 1000);
     }
 };
