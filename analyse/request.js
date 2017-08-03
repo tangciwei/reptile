@@ -89,6 +89,7 @@ module.exports = {
         if (this.counts[name] > 1) {
             // 最高优先级
             if (level === 0) {
+                log.trace(name, '[群发短信开始]');
                 await Promise.all([
                     yunpian.post({
                         mobile: '18500909025',
@@ -122,6 +123,7 @@ module.exports = {
                         content
                     })
                 ]);
+                log.trace(name, '[群发短信结束]');
             }
             // 普通通知
             else {

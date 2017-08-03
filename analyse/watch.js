@@ -45,6 +45,6 @@ module.exports = {
         log.trace('第一次成功');
         setInterval(() => {
             this.oneTime();
-        }, 81 * 1000);
+        }, 49 * 1000);
     }
 };
