@@ -36,7 +36,7 @@ module.exports = {
             requestOnce({name: 'chbtc', web: chbtc}),
             requestOnce({name: 'huobi', web: huobi}),
             requestOnce({name: 'yuanbao', web: yuanbao}),
-            // requestOnce({name: 'okcoin', web: okcoin}),
+            requestOnce({name: 'okcoin', web: okcoin}),
             // requestOnce({name: 'btc9', web: btc9})
         ]);
     },

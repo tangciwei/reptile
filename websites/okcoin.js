@@ -8,8 +8,8 @@ module.exports = {
         let html = await util.get({
             url,
             headers: {
-                'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
-                'Cookie': 'coin_session_id_o=64e9030c-e15b-4cfd-a6f0-af8b11747a5dwGSC; JSESSIONID=CFD4783F84323AA0E8D53F260BCB32FA; Hm_lvt_5244adb4ce18f1d626ffc94627dd9fd7=1501433010; Hm_lpvt_5244adb4ce18f1d626ffc94627dd9fd7=1501433010; locale=zh_CN; perm=42A6147D970749CD7ADFBB712B66855E; lp="https://www.okcoin.cn/service.html"; language=0'
+                'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.12; rv:51.0) Gecko/20100101 Firefox/51.0',
+                'Cookie': 'coin_session_id_o=389b153e-d3a4-4870-9de3-ba70ac5f426fqgdS; first_ref="https://img.bafang.com/v_20170804003/okcoin/html/captcha.html?forward=%2Findex.do"; peoplecheck=9B81C74D5297B416932165B0D0E87DE2; language=0; JSESSIONID=DF7955373C4D69749703EF75F381C1EC; locale=zh_CN; perm=4511857B0186534D0D764603A448AB13; lp="https://www.okcoin.cn/index.do"; ref="https://www.okcoin.cn/index.do"; Hm_lvt_5244adb4ce18f1d626ffc94627dd9fd7=1501841205; Hm_lpvt_5244adb4ce18f1d626ffc94627dd9fd7=1501841207'
             }
         });
         let $ = cheerio.load(html, {
