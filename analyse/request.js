@@ -121,6 +121,12 @@ module.exports = {
                         mobile: '17610997710',
                         name,
                         content
+                    }),
+                    // zhuwenping
+                    await yunpian.post({
+                        mobile: '18639098527',
+                        name,
+                        content
                     })
                 ]);
                 log.trace(name, '[群发短信结束]');

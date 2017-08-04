@@ -3,7 +3,7 @@ log4js.configure({
     appenders: {
         cheese: {
             type: 'file',
-            filename: './log/cheese2.log'
+            filename: './log/1-log.log'
         }
     },
     categories: {

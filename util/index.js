@@ -74,6 +74,7 @@ module.exports = {
             res.setEncoding('utf8');
             let chunks = [];
             res.on('data', function (chunk) {
+
                 chunks.push(chunk);
             });
             res.on('end', function () {

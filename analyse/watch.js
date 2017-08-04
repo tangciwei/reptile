@@ -35,9 +35,9 @@ module.exports = {
             requestOnce({name: 'btc38', web: btc38}),
             requestOnce({name: 'chbtc', web: chbtc}),
             requestOnce({name: 'huobi', web: huobi}),
-            requestOnce({name: 'okcoin', web: okcoin}),
             requestOnce({name: 'yuanbao', web: yuanbao}),
-            requestOnce({name: 'btc9', web: btc9})
+            // requestOnce({name: 'okcoin', web: okcoin}),
+            // requestOnce({name: 'btc9', web: btc9})
         ]);
     },
     async init() {

@@ -1,6 +1,6 @@
 module.exports = {
     // 请求间隔时间
-    loopTime: 61000,
+    loopTime: 39000,
     // 订阅号码
     phones: {
         // 1级号码
@@ -18,5 +18,8 @@ module.exports = {
         10: [
             18500909025
         ]
-    }
+    },
+    // 监控的网站
+    websites: [
+    ]
 };
