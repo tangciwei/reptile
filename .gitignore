@@ -1,3 +1,5 @@
 node_modules
 .env
 bvue-a.sh
+test.js
+t.html
