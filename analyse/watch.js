@@ -7,6 +7,7 @@ let huobi = require('../websites/huobi');
 let okcoin = require('../websites/okcoin');
 let yuanbao = require('../websites/yuanbao');
 let btc9 = require('../websites/btc9');
+let binance = require('../websites/binance');
 
 let request = require('./request');
 let yunpian = require('./yunpian-sms');
@@ -37,7 +38,8 @@ module.exports = {
             requestOnce({name: 'huobi', web: huobi}),
             requestOnce({name: 'yuanbao', web: yuanbao}),
             requestOnce({name: 'okcoin', web: okcoin}),
-            // requestOnce({name: 'btc9', web: btc9})
+            requestOnce({name: 'binance', web: binance}),
+            requestOnce({name: 'btc9', web: btc9})
         ]);
     },
     async init() {
