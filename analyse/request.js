@@ -87,6 +87,9 @@ module.exports = {
         // let content = title + '; ' + href;
         // 第一次不通知
         if (this.counts[name] > 1) {
+            if(name === 'btcchina') {
+                content: '网页有btm';
+            }
             // 最高优先级
             if (level === 0) {
                 log.trace(name, '[群发短信开始]');

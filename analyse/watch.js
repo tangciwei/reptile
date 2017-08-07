@@ -8,6 +8,7 @@ let okcoin = require('../websites/okcoin');
 let yuanbao = require('../websites/yuanbao');
 let btc9 = require('../websites/btc9');
 let binance = require('../websites/binance');
+let btcchina = require('../websites/btcchina');
 
 let request = require('./request');
 let yunpian = require('./yunpian-sms');
@@ -21,6 +22,7 @@ module.exports = {
         }
         catch (e) {
             log.trace(name, '接口挂掉了');
+            log.trace(name, e);
             // await yunpian.post({
             //     mobile: '18500909025',
             //     name,
@@ -42,11 +44,12 @@ module.exports = {
     },
     // 以下接口请求频率慢点
     async slowRequest() {
-        await this.requestOnce({name: 'okcoin', web: okcoin});
-        // await Promise.all([
-        //     this.requestOnce({name: 'okcoin', web: okcoin}),
-        //     // this.requestOnce({name: 'btc9', web: btc9})
-        // ]);
+        // await this.requestOnce({name: 'btcchina', web: btcchina})
+        // await this.requestOnce({name: 'okcoin', web: okcoin});
+        await Promise.all([
+            this.requestOnce({name: 'okcoin', web: okcoin}),
+            this.requestOnce({name: 'btcchina', web: btcchina})
+        ]);
     },
     async init() {
         await this.quickRequest();
