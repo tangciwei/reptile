@@ -17,9 +17,15 @@ module.exports = {
             decodeEntities: false
         });
         let href = 'https://www.btcchina.com';
-        if (html.indexOf('btm') !== -1 || html.indexOf('BTM') !== -1) {
+        if (html.indexOf('btm') !== -1
+            || html.indexOf('BTM') !== -1
+            || html.indexOf('QTUM') !== -1
+            || html.indexOf('qtum') !== -1) {
             href = 'https://www.btcchina.com/';
         }
-        return { href };
+
+        return {
+            href
+        };
     }
 };

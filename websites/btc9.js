@@ -16,7 +16,7 @@ module.exports = {
                 // 'Cookie': 'PHPSESSID=58ou7ekqma56dmjnptggkd6824; UM_distinctid=15dadda0c331df-0735f735f11b29-30667808-13c680-15dadda0c349ba; CNZZDATA1258868758=1150427937-1501855660-https%253A%252F%252Fbtc9.com%252F%7C1501855660'
             }
         });
-        console.log(html)
+        console.log(html);
         let $ = cheerio.load(html, {
             decodeEntities: false
         });
