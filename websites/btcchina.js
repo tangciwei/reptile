@@ -19,6 +19,8 @@ module.exports = {
         let href = 'https://www.btcchina.com';
         if (html.indexOf('btm') !== -1
             || html.indexOf('BTM') !== -1
+            || html.indexOf('BTS') !== -1
+            || html.indexOf('bts') !== -1
             || html.indexOf('QTUM') !== -1
             || html.indexOf('qtum') !== -1) {
             href = 'https://www.btcchina.com/';

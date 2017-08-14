@@ -88,7 +88,7 @@ module.exports = {
         // 第一次不通知
         if (this.counts[name] > 1) {
             if (name === 'btcchina') {
-                content: '网页有btm或者qtum关键字';
+                content = '网页有(btm/bts/qtum)关键字';
             }
 
             // 最高优先级
