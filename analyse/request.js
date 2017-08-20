@@ -1,6 +1,7 @@
 let u = require('underscore');
 let yunpian = require('./yunpian-sms');
 let log = require('../log');
+let config = require('../config');
 
 module.exports = {
     // 数据
@@ -84,8 +85,8 @@ module.exports = {
         }) {
         let {title, href} = data;
         let content = '; ' + href;
-        // let content = title + '; ' + href;
         // 第一次不通知
+        // if (true) {
         if (this.counts[name] > 1) {
             if (name === 'btcchina') {
                 content = '网页有(btm/bts/qtum)关键字';
@@ -94,45 +95,12 @@ module.exports = {
             // 最高优先级
             if (level === 0) {
                 log.trace(name, '[群发短信开始]');
-                await Promise.all([
-                    yunpian.post({
-                        mobile: '18500909025',
-                        name,
-                        content
-                    }),
-                    yunpian.post({
-                        mobile: '18519283208',
-                        name,
-                        content
-                    })
-                ]);
-                // others
-                await Promise.all([
-                    // yanchen
-                    await yunpian.post({
-                        mobile: '15671628395',
-                        name,
-                        content
-                    }),
-                    // xiaofufu
-                    await yunpian.post({
-                        mobile: '18600949271',
-                        name,
-                        content
-                    }),
-                    // chenkai
-                    await yunpian.post({
-                        mobile: '17610997710',
-                        name,
-                        content
-                    }),
-                    // zhuwenping
-                    await yunpian.post({
-                        mobile: '18639098527',
-                        name,
-                        content
-                    })
-                ]);
+                let mobile = config.mobiles[10].join(',');
+                await yunpian.post({
+                    mobile,
+                    name,
+                    content
+                });
                 log.trace(name, '[群发短信结束]');
             }
             // 普通通知

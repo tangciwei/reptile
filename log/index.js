@@ -1,9 +1,12 @@
 const log4js = require('log4js');
+let date = new Date();
+let logname = date.getFullYear()+'-'+(date.getMonth()+1)+'-'+date.getDate()+'-'+date.getHours();
+
 log4js.configure({
     appenders: {
         cheese: {
             type: 'file',
-            filename: './log/1-log.log'
+            filename: './log/'+logname+'.log'
         }
     },
     categories: {
